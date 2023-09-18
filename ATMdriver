@@ -1,0 +1,66 @@
+ class ATM{
+           private String bankName; 
+           private int id;
+           private String location;
+           private long money;
+
+ATM(String bank,int id, String location,long money){
+    this.bankName=bank;
+    this.id=id;
+    this.location=location;
+    this.money=money;
+}
+ public int getId(){
+    return id;
+}
+ public String getBankName(){
+    return bankName;
+ }
+ public String getLocation() {
+    return location;
+ }
+
+ public void setBalance(int accno,int pin,int a){
+          int acno=995577;
+          int pin1=2323;
+          if(acno==accno&& pin1==pin){
+                 money=money-a;
+       System.out.println("withdraw successfully");}
+       else{
+         System.out.println("insufficiant balance");
+       }
+ }
+ public double getMoney(int accno,int pin){
+   int acno=995577;
+   int pin1=2323;
+ if(accno==acno&&pin1==pin){
+   System.out.println("valid account  number and pin num");
+    return money;
+ }
+ else{
+    System.out.println("invalid account number or pin!");
+        return 0;
+ }
+ }
+ public void setDeposite(int accno,int pin1,int paise){
+             int acno=995577;
+             int pin=2323;
+         if(acno==accno&&pin1==pin){
+            money=money+paise;
+            System.out.println("Money is deposited");
+         }
+      else{
+         System.out.println("invalid account number or pin num");}
+ }
+           
+}
+class ATMDriver{
+    public static void main(String [] args){
+        ATM a1= new ATM ("ICICI",10,"Deccan",1000);
+       a1.setBalance(995577,2323,100);
+       System.out.println(a1.getMoney(995577,2323));
+       a1.setDeposite(995577, 2323, 5000);
+                    
+      System.out.println(a1.getMoney(995577,2323));
+    } 
+} 
